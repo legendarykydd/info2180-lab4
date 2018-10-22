@@ -51,6 +51,21 @@ window.onload = function() {
 			status.textContent = "Move your mouse over the \"S\" to begin. Click the \"S\" to restart";
 		}
 	});
+	let nocheating = document.getElementById("start");
+	let maze = document.getElementById("maze");
+
+	nocheating.addEventListener("mouseout", function(){
+		maze.addEventListener("mouseleave", function(){
+			for(var i = 0; i < boundaries.length; i++){
+				document.getElementById("status").textContent = "You Lose!"
+				for(var i = 0; i < boundaries.length; i++){
+					if( boundaries[i].className.indexOf("example") == -1){
+						boundaries[i].className = "boundary youlose";
+					}
+				}
+			}
+		});
+	});
 
 
 }
