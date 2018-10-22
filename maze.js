@@ -35,5 +35,22 @@ window.onload = function() {
 		}
 	});
 
+	var start = document.getElementById("start");
+	var status = document.getElementById("status");
+
+	start.addEventListener("click", function(){
+		var boundary2 = document.querySelectorAll(".boundary");
+		if (boundary2.length != 0){
+			for(var i = 0; i < boundary2.length; i++){
+				if(boundary2[i].className == "boundary example"){
+					continue;
+				}
+				boundary2[i].className = "boundary";
+			}
+
+			status.textContent = "Move your mouse over the \"S\" to begin. Click the \"S\" to restart";
+		}
+	});
+
 
 }
