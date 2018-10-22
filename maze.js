@@ -24,6 +24,16 @@ window.onload = function() {
 			});
 		}
 	}
+	var end = document.getElementById("end");
+	var status = document.getElementById("status");
+
+	end.addEventListener("mouseover", function(){
+		if(document.querySelectorAll(".youlose").length == 0){
+			status.textContent = "You win!";
+		}else{
+			status.textContent = "You Lose!";
+		}
+	});
 
 
 }
